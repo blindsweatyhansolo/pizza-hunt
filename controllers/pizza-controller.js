@@ -6,7 +6,16 @@ const pizzaController = {
     // get all pizzas [GET]
     getAllPizza(req, res) {
         // find() = find all
+        // populate() method used to populate related data (comments)
         Pizza.find({})
+        .populate({
+            path: 'comments',
+            // 'select' method indicates omission of the '__v' field (with the minus symbol) on return
+            select: '-__v'
+        })
+        .select('-__v')
+        // sort() method set to DESC sort via _id by using '-1'
+        .sort({ _id: -1 })
         .then(dbPizzaData => res.json(dbPizzaData))
         .catch(err => {
             console.log(err);
@@ -19,6 +28,11 @@ const pizzaController = {
     getPizzaById({ params }, res) {
         // findOne()
         Pizza.findOne({ _id: params.id })
+        .populate({
+            path: 'comments',
+            select: '-__v'
+        })
+        .select('-__v')
         .then(dbPizzaData => {
             // if no pizza found, send 404
             if (!dbPizzaData) {
