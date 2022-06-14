@@ -18,7 +18,7 @@ const PizzaSchema = new Schema(
         // getter (get) is a special type of function that takes stored data and modifies
         // on return, like middleware; creates a variable called createdAtVal and passes
         // it to the dateFormat() function in /utils
-        get: (createdAtVal) => dateFormat(createdAtVal)
+        get: createdAtVal => dateFormat(createdAtVal)
     },
     size: {
         type: String,
@@ -40,13 +40,22 @@ const PizzaSchema = new Schema(
             getters: true
         },
         // id set to false because this is a virtual that mongoose returns but isn't needed
+        // IMPORTANT! also prevents creation of second id!
         id: false
     }
 );
 
 // VIRTUAL - get total count of comments and replies on retrieval
 PizzaSchema.virtual('commentCount').get(function() {
-    return this.comments.length;
+    // return this.comments.length;
+
+    // reduce() executes a function on each element in an array like map(), but
+    // uses the result of each function execution for each successive computation as it
+    // goes through the array, perfect for getting a sum of multiple values
+    // takes two params: accumulator (total) and a currentValue (comment)
+    // tallies up the total of every comment with it's replies
+    return this.comments.reduce(
+        (total, comment) => total + comment.replies.length + 1, 0);
 });
 
 // create the Pizza model using PizzaSchema
