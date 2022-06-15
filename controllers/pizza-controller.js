@@ -60,8 +60,9 @@ const pizzaController = {
     updatePizza({ params, body }, res) {
         // findOneAndUpdate() finds single document, updates it and returns the
         // updated document using { new: true }, without this it will return the
-        // original document; unlike updateOne() / updateMany() which do not return them
-        Pizza.findOneAndUpdate({ _id: params.id }, body, { new: true })
+        // original document; unlike updateOne() / updateMany() which do not return them;
+        // runValidators must be set to allow validation of new data
+        Pizza.findOneAndUpdate({ _id: params.id }, body, { new: true, runValidators: true })
         .then(dbPizzaData => {
             if (!dbPizzaData) {
                 res.status(404).json({ message: 'No pizza with this id' });
