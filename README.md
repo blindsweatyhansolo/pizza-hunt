@@ -44,7 +44,7 @@ Offline Pizza Creation: using IndexedDB, if a connection is weak or lost, a user
 
 See the fully deployed application here: [Pizza Hunt]()
 
-Project Repo: [blindsweatyhansolo/pizza-hunt]()
+Project Repo: [blindsweatyhansolo/pizza-hunt](https://github.com/blindsweatyhansolo/pizza-hunt)
 
 Questions and feedback always welcome. Check out more of my work here:
-<br>[blindsweatyhansolo]()
+<br>[blindsweatyhansolo](https://github.com/blindsweatyhansolo)
