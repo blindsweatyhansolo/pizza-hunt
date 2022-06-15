@@ -18,7 +18,7 @@ Pizza Hunt is a social PWA (progressive web application) where users can post cu
 *NOTE: **Node.js** and **MongoDB** are required to be installed on your machine prior to working with the codebase. For more information on installing **MongoDB**, [check out this link](https://www.mongodb.com/docs/manual/installation/)*
 
 ## [Usage](#table-of-contents)
-Pizza Hunt is deployed to Heroku here: [Pizza Hunt]()
+Pizza Hunt is deployed to Heroku here: [Pizza Hunt](https://bshs-pizzahunt.herokuapp.com/)
 
 The landing page contains all user created pizzas:<br>
 ![Screenshot of landing page](./public/assets/images/pizzahuntMAIN.png)
@@ -42,7 +42,7 @@ Offline Pizza Creation: using IndexedDB, if a connection is weak or lost, a user
 
 **Links:**
 
-See the fully deployed application here: [Pizza Hunt]()
+See the fully deployed application here: [Pizza Hunt](https://bshs-pizzahunt.herokuapp.com/)
 
 Project Repo: [blindsweatyhansolo/pizza-hunt](https://github.com/blindsweatyhansolo/pizza-hunt)
 
