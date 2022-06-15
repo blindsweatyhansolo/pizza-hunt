@@ -65,6 +65,7 @@ const handlePizzaSubmit = event => {
     .then(postResponse => {
       alert('MAMA MIA! Pizza created successfully!');
       console.log(postResponse);
+      window.location.replace('/');
     })
     .catch(err => {
       console.log(err);
